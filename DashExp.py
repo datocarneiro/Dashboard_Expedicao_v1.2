@@ -54,8 +54,8 @@ def contar_palavras_chave_async():
     options = Options()
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    # options.add_argument('--headless')  # Adiciona a opção para o modo headless
-    # options.add_argument('--disable-gpu')  # Desativa a GPU, recomendável no modo headless
+    options.add_argument('--headless')  # Adiciona a opção para o modo headless
+    options.add_argument('--disable-gpu')  # Desativa a GPU, recomendável no modo headless
     options.add_argument('window-size=1920x1080')  # Define o tamanho da janela
 
     servico = Service(ChromeDriverManager().install())
@@ -105,7 +105,7 @@ def contar_palavras_chave_async():
         print('... Proxima página ...')
         try:
             proxima_pagina_elemento.click()
-            time.sleep(20)
+            time.sleep(10)
         except TimeoutException:
             print("... TimeoutException: Próxima página não encontrada no tempo limite ...")
             break
@@ -118,7 +118,7 @@ def contar_palavras_chave_async():
     # Espera de 5 minutos antes de reiniciar o loop, exceto na primeira execução
     if not first_run:
         print('... Aguardando 5 minutos antes de reiniciar ...')
-        time.sleep(300)  # 300 segundos = 5 minutos
+        time.sleep(420)  # 420 segundos = 7 minutos
     first_run = False  # Atualiza a variável para indicar que a primeira execução já ocorreu
 
     return resultados, total_palavras
@@ -128,7 +128,8 @@ def contar_palavras_chave_async():
 def executar_contar_palavras_chave():
     global palavras_chave, resultados
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        palavras_chave = ["TOTAL EXP",
+        palavras_chave = [
+                        "TOTAL EXP",
                         "FM",
                         "DATO TESTE",
                         "AG AMINTAS",
@@ -136,14 +137,14 @@ def executar_contar_palavras_chave():
                         "OLIST RETIRA",
                         "AG ANGELO",
                         "ENTREGA OSVALDO",
-                        "JAD",
+                        " JAD ",
                         "ESM",
                         "LATAM",
                         "AZUL",
                         "GOL",
                         "ANDREIA SSA",
                         "BIT HOME",
-                        "RETIRA",
+                        "RETIRA NA AMPLO",
                         "BLING",
                         "SUBWAY - AMPLO",
                         "BRASPRESS",
@@ -164,25 +165,27 @@ def executar_contar_palavras_chave():
                         "RODOVITOR",
                         "TRANSPO-ALMENARA",
                         "LOGGI",
-                        "AGF XAXIM",                    
-                        "CDM - AGF CENTENARIO",
-                        "CDM - MAGALU",
-                        "CDM - JADLOG",
-                        "CDM - REVISAR",
-                        "CDM - POT SPEED",
-                        "CDM - DIALOGO",
+                        "AGF XAXIM",
+                        "CDM - AZUL",
+                        "CDM - CORREIOS CENTENARIO",
                         "CDM - DBA",
+                        "CDM - DIALOGO",
                         "CDM - FEDEX",
                         "CDM - FOX",
+                        "CDM - JADLOG",
+                        "CDM - MAGALU",
                         "CDM - NOVA ELOHIM",
-                        "CDM-RETIRA",
+                        "CDM - POT SPEED",
+                        "CDM - RETIRA",
+                        "CDM - REVISAR TRANSPORTES",
                         'IMBERA - ESM',
                         'IMBERA - MOTOBOY',
                         'IMBERA - PEGA ENTREGA',
-                        'IMBERA-RETIRA',
+                        'IMBERA - RETIRA',
                         'IMBERA - RODONAVES',
-                        'IMBERA-AGF-AMINTAS',
-                        "AMAZON"]
+                        'IMBERA - AGF AMINTAS',
+                        "AMAZON"
+                        ]
         
         resultados, total_palavras = contar_palavras_chave_async()
     
