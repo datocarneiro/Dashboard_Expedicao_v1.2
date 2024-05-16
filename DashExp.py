@@ -162,6 +162,7 @@ def executar_contar_palavras_chave():
                         "RAFAEL BERNAL",
                         "RODOVIASUL",
                         "URANOLOG",
+                        "MMCOSTA",
                         "RODOVITOR",
                         "TRANSPO-ALMENARA",
                         "LOGGI",
