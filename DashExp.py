@@ -64,9 +64,9 @@ def contar_palavras_chave_async():
     print(" ...............PASSOU OPTION...............")
 
     print('... Logando ...')
-    navegador.get("https://amplo.eship.com.br/")
-    WebDriverWait(navegador, 15).until(EC.presence_of_element_located((By.XPATH, '//*[@id="login"]'))).send_keys("dato@amplologistica.com.br")
-    WebDriverWait(navegador, 15).until(EC.presence_of_element_located((By.XPATH, '//*[@id="senha"]'))).send_keys("D@sh4123")
+    navegador.get("https://xxxxxxxxxx.com.br/")
+    WebDriverWait(navegador, 15).until(EC.presence_of_element_located((By.XPATH, '//*[@id="login"]'))).send_keys("xxxxxxxx")
+    WebDriverWait(navegador, 15).until(EC.presence_of_element_located((By.XPATH, '//*[@id="senha"]'))).send_keys("xxxxxxxxx")
     WebDriverWait(navegador, 15).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="Entrar"]/span'))).click()
 
     WebDriverWait(navegador, 15).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="FormListarOrdem"]/ul/li[2]/div/a[3]/div'))).click()
