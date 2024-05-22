@@ -1,4 +1,4 @@
-Dashboard com webScraping - dato®
+# Dashboard com webScraping - dato®
 
 O código fornecido é um script Python que utiliza a biblioteca Selenium e o framework Flask para automatizar a extração de informações de uma página da web. O objetivo do código é contar a quantidade de ocorrências de determinadas palavras-chave em um website específico.
 
