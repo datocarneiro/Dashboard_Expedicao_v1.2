@@ -21,14 +21,17 @@ from selenium.webdriver.common.by import By: Importa a classe By do módulo comm
 import time: Importa o módulo time do Python, que é usado para adicionar pausas no código.
 
 *** Lembre-e se instalar cada um no shell do replit ***
+```python
 pip install flask
 pip install selenium
 pip install webdriver_manager
-
+```
 
 Configuração do Aplicativo Flask:
-
-app = Flask(__name__): Cria uma instância do aplicativo Flask.
+```python
+app = Flask(__name__):
+```
+###  Cria uma instância do aplicativo Flask.
 Variáveis Globais:
 
 resultados = {}: Cria um dicionário vazio chamado resultados para armazenar os resultados da contagem das palavras-chave.
