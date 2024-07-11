@@ -1,7 +1,12 @@
 # Dashboard de expedição com webScraping - dato®
 
 
-O código fornecido é um script Python que utiliza a biblioteca Selenium e o framework Flask para automatizar a extração de informações de uma página da web. O objetivo do código é contar a quantidade de ocorrências de determinadas palavras-chave em um website específico.
+O código fornecido é um script Python que utiliza a biblioteca `Selenium` e o framework `Flask` para automatizar a extração de informações de uma página da web. O objetivo do código é contar a quantidade de ocorrências de determinadas palavras-chave em um website específico, e gerar um dashboard de expedidção para melhor gestão operacional.
+
+### Tecnologia: 🎯 Python, Selenium, Pandas, Openpyxl, Flask, Html, CSS.
+
+![image](https://github.com/datocarneiro/Dashboard_Expedicao_v1.2/assets/132966071/128c7c9c-541c-48fc-a20f-f3560c51bd99)
+
 
 Aqui está uma documentação detalhada para o código: 
 
