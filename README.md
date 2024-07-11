@@ -18,7 +18,13 @@ Exibe os resultados da contagem de palavras-chave em uma interface web amigável
 
 ![image](https://github.com/datocarneiro/Dashboard_Expedicao_v1.2/assets/132966071/128c7c9c-541c-48fc-a20f-f3560c51bd99)
 
+Instale as Dependências:
+```python
+pip install -r requirements.txt
+```
+
 ## Estrutura do projeto
+```markdown
 projeto-contagem-palavras-chave/
 ├── app.py
 ├── templates/
@@ -28,7 +34,7 @@ projeto-contagem-palavras-chave/
 ├── .env
 ├── requirements.txt
 └── README.md
-
+```
 
 ## Documentação da API
 
