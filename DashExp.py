@@ -14,8 +14,8 @@ import time
 
 app = Flask(__name__)
 
-nome_correto = "amplo"
-senha_correta = "3033"
+nome_correto = "xxxxxxxxx"
+senha_correta = "xxxxxxxxxx"
 palavras_chave = []
 first_run = True  # Variável global para rastrear a primeira execução
 
