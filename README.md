@@ -14,7 +14,7 @@ Navega automaticamente em uma página web especificada e conta a ocorrência de 
 * Visualização de Resultados:
 Exibe os resultados da contagem de palavras-chave em uma interface web amigável.
 
-### Tecnologia: 🎯 Python, Selenium, Pandas, Openpyxl, Flask, Html, CSS.
+### Tecnologia: 🎯 Python, Selenium, Flask, Html, CSS.
 
 ![image](https://github.com/datocarneiro/Dashboard_Expedicao_v1.2/assets/132966071/128c7c9c-541c-48fc-a20f-f3560c51bd99)
 
