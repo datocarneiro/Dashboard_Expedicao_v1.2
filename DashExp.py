@@ -117,8 +117,8 @@ def contar_palavras_chave_async():
 
     # Espera de 5 minutos antes de reiniciar o loop, exceto na primeira execução
     if not first_run:
-        print('... Aguardando 5 minutos antes de reiniciar ...')
-        time.sleep(420)  # 420 segundos = 7 minutos
+        print('... Aguardando 4 minutos antes de reiniciar ...')
+        time.sleep(240)  # 240 segundos = 4 minutos
     first_run = False  # Atualiza a variável para indicar que a primeira execução já ocorreu
 
     return resultados, total_palavras
@@ -130,6 +130,7 @@ def executar_contar_palavras_chave():
     with concurrent.futures.ThreadPoolExecutor() as executor:
         palavras_chave = [
                         "TOTAL EXP",
+                        "PAPAPA - TOTAL",
                         "FM",
                         "DATO TESTE",
                         "AG AMINTAS",
@@ -138,54 +139,57 @@ def executar_contar_palavras_chave():
                         "AG ANGELO",
                         "ENTREGA OSVALDO",
                         " JAD ",
-                        "ESM",
-                        "LATAM",
-                        "AZUL",
-                        "GOL",
-                        "ANDREIA SSA",
-                        "BIT HOME",
+                        # "ESM",
+                        # "LATAM",
+                        # "AZUL",
+                        # "GOL",
+                        # "ANDREIA SSA",
+                        "POSTA JA",
                         "RETIRA NA AMPLO",
                         "BLING",
                         "SUBWAY - AMPLO",
-                        "BRASPRESS",
                         "MULHERES",
-                        "RODONAVES",
-                        "PAULISTANA",
-                        "ADW",
-                        "TECMAR",
-                        "MAEX",
-                        "BEMOL",
-                        "DESTAK",
-                        "AVANCE",
-                        "DOMINIO",
-                        "EBTRANS",
-                        "RAFAEL BERNAL",
-                        "RODOVIASUL",
-                        "URANOLOG",
-                        "MMCOSTA",
-                        "RODOVITOR",
+                        "TRANSPORTADORA",
+                        "BRASPRESS",
+                        # "RODONAVES",
+                        # "PAULISTANA",
+                        # "ADW",
+                        # "TECMAR",
+                        # "MAEX",
+                        # "BEMOL",
+                        # "DESTAK",
+                        # "AVANCE",
+                        # "DOMINIO",
+                        # "EBTRANS",
+                        # "RAFAEL BERNAL",
+                        # "RODOVIASUL",
+                        # "URANOLOG",
+                        # "MMCOSTA",
+                        # "RODOVITOR",''
                         "TRANSPO-ALMENARA",
                         "LOGGI",
                         "AGF XAXIM",
-                        "CDM - AZUL",
-                        "CDM - CORREIOS CENTENARIO",
-                        "CDM - DBA",
-                        "CDM - DIALOGO",
-                        "CDM - FEDEX",
-                        "CDM - FOX",
-                        "CDM - JADLOG",
-                        "CDM - MAGALU",
-                        "CDM - NOVA ELOHIM",
-                        "CDM - POT SPEED",
-                        "CDM - RETIRA",
-                        "CDM - REVISAR TRANSPORTES",
+                        "J&T",
+                        # "CDM - AZUL",
+                        # "CDM - CORREIOS CENTENARIO",
+                        # "CDM - DBA",
+                        # "CDM - DIALOGO",
+                        # "CDM - FEDEX",
+                        # "CDM - FOX",
+                        # "CDM - JADLOG",
+                        # "CDM - MAGALU",
+                        # "CDM - NOVA ELOHIM",
+                        # "CDM - POT SPEED",
+                        # "CDM - RETIRA",
+                        # "CDM - REVISAR TRANSPORTES",
                         'IMBERA - ESM',
                         'IMBERA - MOTOBOY',
                         'IMBERA - PEGA ENTREGA',
                         'IMBERA - RETIRA',
                         'IMBERA - RODONAVES',
                         'IMBERA - AGF AMINTAS',
-                        "AMAZON"
+                        "AMAZON",
+                        "PEGA ENT"
                         ]
         
         resultados, total_palavras = contar_palavras_chave_async()
@@ -196,4 +200,4 @@ def executar_contar_palavras_chave():
     return render_template('index.html', resultados=resultados, total_palavras=total_palavras)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080)
+    app.run() #host="0.0.0.0", port=8080)
