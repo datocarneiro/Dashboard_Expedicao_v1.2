@@ -18,7 +18,7 @@ Exibe os resultados da contagem de palavras-chave em uma interface web amigável
 
 ![image](https://github.com/datocarneiro/Dashboard_Expedicao_v1.2/assets/132966071/128c7c9c-541c-48fc-a20f-f3560c51bd99)
 
-![image](https://github.com/user-attachments/assets/fdf40b57-e8b2-4983-ac46-f90486843572)
+<!--![image](https://github.com/user-attachments/assets/fdf40b57-e8b2-4983-ac46-f90486843572)-->
 
 
 Instale as Dependências:
