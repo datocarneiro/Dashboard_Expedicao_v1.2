@@ -11,11 +11,12 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 import concurrent.futures
 import time
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-nome_correto = "xxxxxxxxx"
-senha_correta = "xxxxxxxxxx"
+
+
 palavras_chave = []
 first_run = True  # Variável global para rastrear a primeira execução
 
@@ -25,10 +26,12 @@ def login():
 
 @app.route('/verificar_senha', methods=['POST'])
 def verificar_senha():
+    login = os.getenv('LOGIN')
+    senha = os.getenv('SENHA')
     nome_inserido = request.form['nome']
     senha_inserida = request.form['senha']
     
-    if nome_inserido == nome_correto and senha_inserida == senha_correta:
+    if nome_inserido == login and senha_inserida == senha:
         return redirect(url_for('login_passou'))
     else:
         mensagem_erro = "Nome ou senha incorretos. Tente novamente."
@@ -56,17 +59,24 @@ def contar_palavras_chave_async():
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--headless')  # Adiciona a opção para o modo headless
     options.add_argument('--disable-gpu')  # Desativa a GPU, recomendável no modo headless
-    options.add_argument('window-size=1920x1080')  # Define o tamanho da janela
+    options.add_argument('window-size=1366x768')  # Define o tamanho da janela
 
     servico = Service(ChromeDriverManager().install())
     navegador = webdriver.Chrome(service=servico, options=options)
 
+    navegador.execute_script("document.body.style.zoom='75%'")
+
     print(" ...............PASSOU OPTION...............")
 
+    apikey = os.getenv('APIKEY')
+    usuario = os.getenv('USUARIO')
+    senha_usuario  = os.getenv('SENHA_USUARIO')
+
     print('... Logando ...')
-    navegador.get("https://xxxxxxxxxx.com.br/")
-    WebDriverWait(navegador, 15).until(EC.presence_of_element_located((By.XPATH, '//*[@id="login"]'))).send_keys("xxxxxxxx")
-    WebDriverWait(navegador, 15).until(EC.presence_of_element_located((By.XPATH, '//*[@id="senha"]'))).send_keys("xxxxxxxxx")
+    navegador.get("https://amplo.eship.com.br/")
+    # WebDriverWait(navegador, 15).until(EC.presence_of_element_located((By.XPATH, '//*[@id="login"]'))).send_keys(usuario)
+    # WebDriverWait(navegador, 15).until(EC.presence_of_element_located((By.XPATH, '//*[@id="senha"]'))).send_keys(senha_usuario)
+    WebDriverWait(navegador, 15).until(EC.presence_of_element_located((By.XPATH, '//*[@id="apikey"]'))).send_keys(apikey)
     WebDriverWait(navegador, 15).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="Entrar"]/span'))).click()
 
     WebDriverWait(navegador, 15).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="FormListarOrdem"]/ul/li[2]/div/a[3]/div'))).click()
@@ -88,7 +98,7 @@ def contar_palavras_chave_async():
                 conteudo_elemento = elemento.text
                 for palavra in palavras_chave:
                     resultados[palavra] += conteudo_elemento.count(palavra)
-                    print(f'... Palavra {palavra} encontrada ...')
+                    # print(f'... Palavra {palavra} encontrada ...')
 
             # Verifica se há próxima página
             proxima_pagina_elemento = navegador.find_element(By.XPATH, '//*[@id="FormListarOrdem"]/ul/li[6]')
